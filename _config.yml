@@ -1,0 +1,50 @@
+name: Flossku
+description: "Semua floss dan tekno ada disini."
+url: "#"
+
+paginate: 5
+permalink: /:title
+paginate_path: "/weblog/page:num/"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+      css_class: 'highlight'
+feed:
+  path: atom.xml
+  posts_limit: 2020
+
+sass:
+  style: :expanded
+
+# Newsline True/False
+newsline: true
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+feed:
+  posts_limit: 100
+
+exclude:
+  - pages
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - drafts
+  - posts
+  - BACKUP
+  - config.yml
+  - drafts
+  - drafts_backup
+  - "00-ÖVERSÄTTA"
+  - layout
+
+include: ['_pages', '_includes']
+exclude: ['drafts', 'posts', '00-ÖVERSÄTTA']

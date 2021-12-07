@@ -1,0 +1,11 @@
+{% if post %}
+    {% assign tags = post.tags %}
+{% elsif page %}
+    {% assign tags = page.tags %}
+{% endif %}
+
+Tagged in:
+
+{% for tags in tags %}
+   <a href="{{site.baseurl}}/weblog/#{{tags|slugize}}">{{tags}}</a>{% unless forloop.last %} | {% endunless %}
+{% endfor %}

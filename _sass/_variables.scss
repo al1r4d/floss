@@ -1,0 +1,32 @@
+$bg: #fff;
+$header: #222;
+$footer: #f1f1f1;
+
+$codeFg: #DC143C;
+$codeBg: #f2f2f2;
+$codeBr: rgba(0,0,0,0.15);
+
+$warning: #fdd;
+$update: #d1ecf1;
+$note: #fff3ce;
+$tip: #d4edda;
+
+$black: #222;
+$white: #fff;
+$blue: #0060df;
+$green: #7E9F5B;
+$orange: #ffa600;
+$magenta: #982395;
+$grey: #c2bebe;
+$darkGrey: #555;
+$silver: #ddd;
+
+$darkBg: #111;
+$lightBlue: #fda53c;
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

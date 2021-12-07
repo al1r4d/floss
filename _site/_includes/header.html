@@ -1,0 +1,22 @@
+<!-- Needed for the "current" class -->
+{% assign current = page.url | downcase | split: '/' %}
+
+<header>
+
+	<div class="wrapper">
+			<nav>
+		
+	<ul>
+	<li class="pull-left"><a href="/">flossku</a></li>
+	<li class="pull-right"><a href="/tentang" {% if current[1] == "tentang" %}class="current"{% endif %} >Tentang</a></li>
+	</ul>
+        
+		</nav> 
+
+
+        <div style="clear:both;"></div>
+
+    </div>
+
+</header>
+

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="container-edge-border">
+
+      {% if site.newsline %}
+        {% include newsline.html %}
+      {% endif %}
+       </div>
+
+       <article class="page">
+
+    <h1>{{ page.title | escape }}</h1>
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+</article>

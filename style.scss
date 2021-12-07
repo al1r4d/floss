@@ -1,0 +1,548 @@
+---
+---
+@import "variables";
+
+html {
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background: #222;
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+.pull-left {
+    float: left
+}
+.pull-right {
+    float: right
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+    @include mobile {
+	    width: 100%;
+    }
+}
+
+/*------------------------------*/
+/* Text
+/*------------------------------*/
+
+p,
+ul,
+ol,
+tr {
+    line-height: 1.45em;
+    color: $white;
+}
+
+a {
+    color: $green;
+}
+
+a:visited {
+    color: $green;
+}
+
+a:hover {
+    color: $magenta;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h3 {
+	text-align: right;
+}
+/*------------------------------*/
+/* Header
+/*------------------------------*/
+
+header {
+    background: $header;
+
+    a,
+    a:visited,
+    a:hover {
+        color: $white;
+    }
+
+    a,
+    a:visited {
+        text-decoration: none;
+    }
+
+    h2 {
+        margin: 1.15em 0 0 0;
+    }
+    h3 {
+	    text-align: right;
+    }
+
+   /* h2::before {
+        content: "[";
+        color: $green;
+    }
+    h2::after {
+        content: "]";
+        color: $green;
+    }
+*/
+    @include mobile {
+        .left {
+            margin: 0.75em 0 0 0;
+        }
+
+        ul {
+            margin: 0.5em 0;
+        }
+        nav a {
+            padding: 0.5em;
+        }
+    }
+}
+
+nav {
+    padding: 1em 0;
+
+    a {
+        padding: 0.5em 0.75em;
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+
+    a:hover {
+        background: $green;
+        text-decoration: none;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        display: inline;
+    }
+
+    li .current {
+        background: $darkGrey; 
+    }   
+
+    a:hover,
+    li .current {
+        border-radius: 2px;
+    }
+
+    @include mobile {
+        li {
+            display: inline-flex;
+        }
+    }
+}
+
+nav.right {
+    @include mobile {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+    }
+}
+
+/*------------------------------*/
+/* Content
+/*------------------------------*/
+
+.page-content, .wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.home {
+    padding-top: 0.75em;
+}
+
+.home li,
+.archive .post-list li {
+    list-style: none
+}
+
+.post {
+    .date {
+        padding-bottom: 1em;
+    }
+}
+
+article {
+    p code {
+        padding: 3px 7px;
+        line-height: 1.8em;
+    }
+
+    ol code,
+    p code,
+    .highlight pre,
+    td code {
+        background: $codeBg;
+        padding: 3px 7px;
+        border: 1px solid rgba(0,0,0,0.15);
+    }
+
+    blockquote {
+        border-left: 5px solid $grey;
+        padding: 0.1em 1em;
+        /* font-style: italic; */
+        color: rgba(0,0,0,0.85);
+    }
+
+    code {
+        font-size: 14px;
+        page-break-inside:avoid;
+        page-break-after:auto;
+        overflow: auto;
+        color: $black;
+    }
+
+    ul {
+        code {
+        background: $codeBg;
+        padding: 3px 7px;
+        border: 1px solid rgba(0,0,0,0.15);
+        }
+    }
+
+    
+        .highlighter-rouge {
+                background: #333;
+                color: $orange;
+                border: 1px solid rgba(255,255,255,0.15);
+            }
+
+    .highlight pre {
+        padding: 1.5em 1.25em;
+        overflow: auto;
+        border: 1px solid rgba(0,0,0,0.15);
+    }
+
+    img {
+        margin: 1em auto;
+        display: block;
+        max-width: 100%;
+        filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+    }
+
+    video {
+        margin: 0 auto;
+        display: block;
+    }
+
+    figure {
+        margin: 2em auto;
+        padding: 0;
+        img {
+            margin-bottom: 1em;
+            padding: 0;
+        }
+    }
+
+    figcaption {
+        text-align: center;
+        margin: 1em 0 0.5em 0;
+        color: $black;
+        
+        @include mobile {
+            margin: 0.5em 0;
+        }
+    }
+
+    .grid-container {
+        display: flex;
+    }
+
+    .grid-item {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        min-width: 33.33%;
+        padding: 0 1px;
+
+        @include mobile {
+            max-width: 100%;
+        }
+    }
+    .grid-item middle {
+        padding: 3px;
+    }
+
+    .grid-item.full {
+        max-width: 100%;
+    }
+
+    .more {
+        padding: 0.5em 0;
+
+        @include mobile {
+            padding: 0.15em 0 1em 0;
+        }
+    }
+
+    .flag, .flagv {
+        margin: 0;
+        display: unset;
+        width: unset;
+        max-width: 16px;
+    }
+
+    .flagv {
+        margin: 0 3px -2px 0;
+    }
+
+    .tags {
+        padding: 1em 0 0.5em 0;
+        margin: 1em 0;
+    }
+
+    .avatar {
+        margin: 0 0 1em 1em;
+        max-width: 125px;
+        border-radius: 2px;
+        
+        @include mobile {
+                max-width: 100px;
+        }
+    }
+
+    @include mobile {
+        ul,
+        ol {
+            padding-left: 2em;
+        }
+    }
+
+    hr {
+        border: 0;
+        height: 0;
+        border-bottom: 1px solid $silver;
+    }
+}
+
+section,
+.archive {
+    @include mobile {
+    
+        .date.right {
+            float: none;
+            display: inline-block;
+        }
+    
+        .date.right::before {
+            content: " — ";
+        }
+    
+    }
+}
+
+article,
+.home {
+    @include mobile {
+        p {
+            margin-top: 0.25em;
+        }
+    }
+}
+
+.home, .post-list {
+    .date, .span {
+        display: table-cell;
+        @include mobile {
+            display: table;
+        }
+    }
+
+    .date {
+        width: 7em;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        padding-bottom: 0.5em;
+        @include mobile {
+            padding-bottom: 1em;
+        }
+    }
+    @include mobile {
+        .date {
+            width: 6em;
+        }
+    }
+}
+.meta {
+    border-top: 1px solid $silver;
+    margin-top: 2em;
+    padding-top: 0.35em;
+    @include mobile {
+        ul {
+            padding-left: 2em;
+        }
+    }
+}
+
+/*------------------------------*/
+/* Footer
+/*------------------------------*/
+
+footer {
+    background: #222;
+    padding: 0.5em 0 1em 0;
+    margin-top: 2em;
+}
+
+/*------------------------------*/
+/* Tables
+/*------------------------------*/
+
+table {
+    border-collapse: collapse;
+    width:100%;
+    margin-bottom: 1.75em;
+}
+
+td, th {
+    border: 1px solid $grey;
+    padding: 0.5em;
+}
+
+th {
+    text-align: left;
+    background: rgba(0,0,0,0.1);
+}
+
+tr:nth-child(even){
+    background: rgba(0,0,0,0.05);
+}
+
+/*------------------------------*/
+/* Notes, warnings & updates
+/*------------------------------*/
+
+.note,
+.warning,
+.update,
+.tip {
+    display: block;
+    padding: 0.75em 1em;
+    border: 1px solid rgba(0,0,0,0.15);
+    color: rgba(0,0,0,0.65);
+
+    .highlighter-rouge {
+        background: rgba(0,0,0,0.1);
+    }
+}
+
+.note {
+    background: $note;
+}
+
+.warning {
+    background: $warning;
+}
+
+.update {
+    background: $update;
+}
+
+.tip {
+    background: $tip;
+}
+
+.note::before,
+.warning::before,
+.update::before,
+.tip::before {
+    font-weight: bold;
+}
+
+.note::before {
+    content: "Note: ";
+}
+
+.warning::before {
+    content: "Warning: ";
+}
+
+.update::before {
+    content: "Post updated:";
+
+}
+
+.tip::before {
+    content: "Tip: ";
+}
+
+/*------------------------------*/
+/* Misc
+/*------------------------------*/
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.full {
+        max-width: 100%;
+}
+
+article, section.meta, footer {
+    a[href^="xmpp"]::after, a[href^="mailto"]::after,
+    a[href^="http"]::after, a[href^="https://"]::after {
+        content: "";
+        width: 11px;
+        height: 11px;
+        margin-left: 4px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+	background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+    }
+    a[href^="https://radhitya.mengobrol.com"]::after { display: none !important; }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container > div {
+  margin: 5px;
+  padding: 5px;
+  font-size: 18px;
+}
+
+div.search {
+  max-width: 200px;
+  margin: auto;
+  }
+/*------------------------------*/
+/* Dark mode
+/*------------------------------*/
+/*------------------------------*/
+/* Import `default` last
+/*------------------------------*/
+
+@import "default";

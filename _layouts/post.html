@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="container-edge-border">
+
+      {% if site.newsline %}
+        {% include newsline.html %}
+      {% endif %}
+       </div>
+<!-- Script pointing to search-script.js -->
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt MIT
+// @license-end
+</script>
+<script src="/newsline-sticky.js" type="text/javascript"></script>
+
+<article class="post">
+    <h1>{{ page.title }}</h1>
+    <div class="date">{{ page.date | date: "%-d %-B %-Y" }}
+    <span> dalam kategori 
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/tag/{{ tag_name }}">{{ tag_name }}</a>
+  {% endfor %}
+</span>
+
+
+    </div>
+<img src="{{ post.thumbnail }}"/> 
+<p>{{ content }}</p>
+</article>
+

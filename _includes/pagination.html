@@ -1,0 +1,21 @@
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  <ul class="inline-list">
+    {% comment %} Link for previous page {% endcomment %}
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <li><a href="/" class="btn">Previous</a></li>
+      {% else %}
+        <li><a href="/weblog/page{{ paginator.previous_page }}/" class="btn">Previous</a></li>
+      {% endif %}
+    {% endif %}
+
+{% comment %}
+      Link next page
+    {% endcomment %}
+    {% if paginator.next_page %}
+      <li><a href="/weblog/page{{ paginator.next_page }}/" class="btn">Next</a></li>
+    {% endif %}
+  </ul>
+</div>
+{% endif %}

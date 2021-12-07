@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="#/feed.xml" rel="self" type="application/atom+xml" /><link href="#/" rel="alternate" type="text/html" /><updated>2021-12-08T05:20:34+07:00</updated><id>#/feed.xml</id><title type="html">Flossku</title><subtitle>Semua floss dan tekno ada disini.</subtitle><entry xml:lang="id_ID"><title type="html">Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)</title><link href="#/pindah-ke-linux" rel="alternate" type="text/html" title="Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)" /><published>2021-12-06T00:00:00+07:00</published><updated>2021-12-06T00:00:00+07:00</updated><id>#/pindah-ke-linux</id><content type="html" xml:base="#/pindah-ke-linux">&lt;h2 id=&quot;kata-pengantar&quot;&gt;Kata Pengantar&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Memberi gambaran dan panduan untuk migrasi ke GNU/Linux&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Mereka yang hendak bermigrasi ke GNU/Linux membutuhkan gambaran dan panduan. Inilah alasan saya menulis catatan ini.&lt;/p&gt;
+
+&lt;h2 id=&quot;apa-itu-linux&quot;&gt;Apa itu Linux?&lt;/h2&gt;
+&lt;p&gt;Komputer bukan hanya tentang Windows. Ada beberapa operasi sistem yang bisa anda gunakan, antara lain GNU/Linux, BSD, Android, Haiku, dan masih banyak lagi. Apakah operasi sistem selain Windows bagus? Tergantung dari mana anda menilai.&lt;/p&gt;
+
+&lt;p&gt;Pernahkah anda mendengar &lt;a href=&quot;https://id.wikipedia.org/wiki/Linus_Torvalds&quot;&gt;Linux&lt;/a&gt;? Jika anda antusias di dunia teknologi mungkin tahu kernel ini. Linux adalah kernel yang dibuat oleh &lt;a href=&quot;https://id.wikipedia.org/wiki/Linus_Torvalds&quot;&gt;Linus Torvalds&lt;/a&gt; pada 17 September 1991. Dengan lisensi &lt;a href=&quot;https://id.wikipedia.org/wiki/Lisensi_Publik_Umum_GNU&quot;&gt;GNU GPLv2&lt;/a&gt;, anda bisa mendapatkannya, mendistribusikan, dan memodifikasinya.&lt;/p&gt;
+
+&lt;p&gt;Tahukah kamu jika Linux ‘mendominasi’ teknologi? Salah satu buktinya adalah Android. Ponsel genggam kebanyakan ditenagai oleh &lt;a href=&quot;https://source.android.com/devices/architecture/kernel/android-common&quot;&gt;Android yang menggunakan kernel Linux&lt;/a&gt;. Kalau tidak percaya, cobalah melihat detail ponsel genggam di handphone anda. Disitu akan muncul kernel yang digunakan, misalnya kernel 3.10, 4.4, 4.9, dan lain - lain.&lt;/p&gt;
+
+&lt;h2 id=&quot;lalu-apa-itu-gnulinux&quot;&gt;Lalu apa itu GNU/Linux?&lt;/h2&gt;
+&lt;p&gt;Paragraf ini dikutip dari laman &lt;a href=&quot;https://www.gnu.org/gnu/linux-and-gnu.id.html&quot;&gt;Linux dan sistem GNU&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Di awal tahun 1990-an, Tim GNU telah berhasil menyatukan keseluruhan komponen-komponen di luar kernel. Mereka baru saja mulai mengembangkan kernel, &lt;a href=&quot;https://www.gnu.org/software/hurd/hurd.html&quot;&gt;GNU Hurd&lt;/a&gt;, yang digunakan oleh Mach. Pengembangan kernel ini kenyataannya lebih sulit dari yang mereka bayangkan.&lt;/p&gt;
+
+&lt;p&gt;Berkat kernel Linux, TIM GNU tidak perlu menunggu rampungnya pengembangan Hurd. Saat Linux dirilis, secara tidak langsung Torvalds telah membantu penyempurnaan sistem GNU. Kombinasi Linux dan sistem GNU merupakan sebuah sistem yang sempurna: yaitu versi sistem GNU berbasis Linux, atau singkatnya sistem GNU/Linux.&lt;/p&gt;
+
+&lt;h3 id=&quot;kenapa-banyak-sekali-distribusi-linux&quot;&gt;Kenapa banyak sekali distribusi Linux?&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dalam konteks ini, linux diartikan sebagai distro, bukan kernel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Cobalah anda mencari dengan kata kunci &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;download linux&lt;/code&gt; di mesin pencari. Maka akan muncul rekomendasi - rekomendasi, seperti download linux trisquel, download linux parabola, download linux devuan, dan lain - lain. Kenapa distribusi Linux beragam? Kembali lagi ke lisensi linux. Dengan lisensi GNU GPLv2, anda dapat mendapatkannya, memodifikasikan, dan mendistribusikan ulang Linux. Dengan itu, banyak komunitas atau perusahaan membuat distro Linux, misal &lt;a href=&quot;https://manjaro.org/&quot;&gt;Manjaro&lt;/a&gt;, &lt;a href=&quot;https://www.oracle.com/linux/&quot;&gt;Oracle Linux&lt;/a&gt;, &lt;a href=&quot;https://archlinux.org/&quot;&gt;Arch Linux&lt;/a&gt;, dan masih banyak lagi.&lt;/p&gt;
+
+&lt;p&gt;Kebanyakan dari keberagaman distro hanyalah turunan dari distro Linux tertentu, apa maksudnya? Ratusan distribusi linux umumnya lahir dari distro tertentu, nama lainnya &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;distro turunan&lt;/code&gt;, contohnya &lt;strong&gt;Linux Mint turunan dari Ubuntu, lalu Ubuntu turunan dari Debian, dan Debian adalah basisnya&lt;/strong&gt;, &lt;strong&gt;Manjaro adalah turunan dari Arch Linux dan Arch Linux adalah basisnya&lt;/strong&gt;, dan lain - lain.&lt;/p&gt;
+
+&lt;p&gt;Keberagaman distribusi Linux menjadi masalah bagi pemula, manakah yang harus dipilih? Setiap distribusi memiliki pasar dan tujuan tersendiri.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jika anda hanyalah pengguna biasa, distribusi &lt;a href=&quot;https://devuan.org&quot;&gt;Devuan&lt;/a&gt;, &lt;a href=&quot;https://mxlinux.org/&quot;&gt;MX Linux&lt;/a&gt;, &lt;a href=&quot;https://linuxmint.com/&quot;&gt;Linux Mint&lt;/a&gt;, &lt;a href=&quot;https://opensuse.org&quot;&gt;OpenSuse&lt;/a&gt;, dan &lt;a href=&quot;https://getfedora.org/&quot;&gt;Fedora&lt;/a&gt; cocok untuk digunakan.&lt;/li&gt;
+  &lt;li&gt;Jika anda menggunakan Linux sebagai server, distribusi &lt;a href=&quot;https://www.redhat.com/&quot;&gt;Red Hat&lt;/a&gt;, &lt;a href=&quot;https://debian.org&quot;&gt;Debian&lt;/a&gt;, &lt;a href=&quot;https://ubuntu.com&quot;&gt;Ubuntu&lt;/a&gt;, dan &lt;a href=&quot;https://www.alpinelinux.org/&quot;&gt;Alpine Linux&lt;/a&gt; bisa dipilih.&lt;/li&gt;
+  &lt;li&gt;Jika anda ingin bermain game, distribusi &lt;a href=&quot;https://garudalinux.org/&quot;&gt;Garuda Linux&lt;/a&gt; dan &lt;a href=&quot;https://draugeros.org/&quot;&gt;Drauger OS&lt;/a&gt; dapat diandalkan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kebanyakan-distro-linux-tidak-100-bebas&quot;&gt;Kebanyakan Distro Linux Tidak 100% Bebas.&lt;/h3&gt;
+&lt;p&gt;Sayang sekali anda kebanyakan distribusi Linux tidak benar 100% bebas. Rata - rata distribusi Linux membawa paket &lt;a href=&quot;https://malsasa.wordpress.com/2016/04/07/apa-itu-proprietary-software/&quot;&gt;&lt;em&gt;Proprietary Software&lt;/em&gt;&lt;/a&gt;. Paket - paket &lt;em&gt;proprietary&lt;/em&gt; biasanya digunakan untuk &lt;em&gt;firmware&lt;/em&gt;, &lt;em&gt;driver&lt;/em&gt;, dan lain - lain.&lt;/p&gt;
+
+&lt;p&gt;Untungnya sudah ada distribusi linux yang 100% bebas, misalnya :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dragora.org/en/index.html&quot;&gt;Dragora GNU/Linux-libre&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gnu.org/software/guix/&quot;&gt;GUIX GNU/Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.parabola.nu/&quot;&gt;Parabola GNU/Linux-libre&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://trisquel.info/&quot;&gt;Trisquel GNU/Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pureos.net/&quot;&gt;PureOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bukan berarti untuk mencapai kebebasan penuh, anda harus menginstall distribusi di atas. Ada cara lain, yaitu membuang paket - paket &lt;em&gt;proprietary&lt;/em&gt; yang terinstall dan hanya menggunakan repositori berisi &lt;em&gt;free software&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;kenapa--gnulinux&quot;&gt;Kenapa  GNU/Linux?&lt;/h2&gt;
+&lt;p&gt;GNU/Linux bisa untuk apa saja. Ratusan orang setiap hari mencari informasi dan memasang operasi sistem Linux. Mereka yang memasang GNU/Linux biasanya tertarik karena :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gratis&lt;/strong&gt;. Linux bisa didapatkan secara gratis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lebih aman&lt;/strong&gt;. Meskipun setiap operasi sistem tidak ada yang aman. Jika dibandingkan dengan Windows, Linux lebih aman dari virus.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mudah dikustomisasi&lt;/strong&gt;. Anda bisa memodifikasi GNU/Linux sesuai keinginan anda, mulai dari tampilan hingga ke kernelnya.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ringan&lt;/strong&gt;. Tidak seperti Windows yang membutuhkan sumber daya besar. GNU/Linux dapat berjalan baik di spesifikasi mana saja, meskipun laptop anda berspesifikasi rendah dan &lt;a href=&quot;https://www.niagahoster.co.id/blog/iot-adalah/&quot;&gt;perangkat IoT&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;alasan-saya-pindah-ke-gnulinux&quot;&gt;Alasan Saya Pindah Ke GNU/Linux&lt;/h4&gt;
+&lt;p&gt;Saya antusias dengan berita teknologi. Suatu hari tidak sengaja menemukan CD &lt;a href=&quot;https://www.debian.org/releases/woody/&quot;&gt;Debian Woody&lt;/a&gt;, akhirnya saya mencari infomrasi tentang GNU/Linux. Waktu itu saya hanya sebatas membaca saja, tidak mencoba.&lt;/p&gt;
+
+&lt;p&gt;Di tahun 2020, saya kembali membaca Linux setelah punya &lt;a href=&quot;https://support.lenovo.com/id/en/solutions/pd100280-detailed-specifications-thinkpad-t440p&quot;&gt;laptop pribadi&lt;/a&gt;. Distro pertama saya adalah Linux Mint. Instalasi secara &lt;em&gt;single boot&lt;/em&gt;, saya menghapus Windows.&lt;/p&gt;
+
+&lt;p&gt;Alasan saya pindah ke Linux awalnya ingin mencoba dunia baru. Saya membaca informasi tentang Linux kalau operasi sistem ini mudah dimodifikasi, tersedia &lt;a href=&quot;https://en.wikipedia.org/wiki/Free_as_in_Freedom&quot;&gt;gratis secara kebebasan&lt;/a&gt;, dan lain - lain.&lt;/p&gt;
+
+&lt;h2 id=&quot;bagaimana-cara-migrasi-ke-gnulinux-secara-penuh&quot;&gt;Bagaimana Cara Migrasi Ke GNU/Linux Secara Penuh&lt;/h2&gt;
+&lt;p&gt;Saya akan menulis pengalaman saya bermigrasi ke GNU/Linux secara penuh. Sampai catatan ini ditulis, saya hanya memasang operasi sistem GNU/Linux di laptop. Juga sedikit program proprietary yang terinstall, antara lain &lt;em&gt;Firmware-intel&lt;/em&gt; dan &lt;em&gt;Fonts Microsoft Office&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;niat&quot;&gt;Niat&lt;/h3&gt;
+&lt;p&gt;Saya memiliki niat besar untuk mempelajari dan menggunakan GNU/Linux, akhirnya saya pasang secara &lt;em&gt;single boot&lt;/em&gt;. Artinya tidak ada operasi sistem lain, selain GNU/Linux.&lt;/p&gt;
+
+&lt;p&gt;Jika anda ingin bermigrasi secara penuh, pastikan anda memiliki tekad kuat untuk menggunakan GNU/Linux. Kalau niatnya masih rendah, mungkin migrasinya hanya setengah - setengah.&lt;/p&gt;
+
+&lt;h3 id=&quot;berani-belajar-dan-menanggung-resiko&quot;&gt;Berani Belajar dan Menanggung Resiko&lt;/h3&gt;
+&lt;p&gt;Pindah dari zona nyaman itu tidak enak, menakutkan, dan menyusahkan. Ketika anda bermigrasi ke GNU/Linux, anda harus mau untuk belajar dan menanggung resiko.&lt;/p&gt;
+
+&lt;p&gt;Contoh yang paling besar adalah resiko tidak ada Microsoft Office di Linux. Sebagian pemula tidak berani menggunakan &lt;a href=&quot;https://www.libreoffice.org/&quot;&gt;LibreOffice&lt;/a&gt; karena tidak sama seperti Microsoft Office, mereka takut hasilnya rusak, dokumennya bermasalah, dan lain - lain. Padahal tidak selalu hasil dari Libreoffice buruk.&lt;/p&gt;
+
+&lt;p&gt;Saya sudah membuktikannya selama setahun menggunakan LibreOffice, dokumen - dokumen yang saya tulis menggunakan Libreoffice. Yang namanya dokumen bermasalah ketika diakses di Microsoft Office sangatlah jarang. Jika ada masalah, mudah sekali untuk memperbaikinya.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tapi, yang lebih menakutkan dari apapun yang pernah kita takutkan adalah kalau kita terus-terusan merasa takut.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;sedikit-memaksa&quot;&gt;Sedikit Memaksa.&lt;/h3&gt;
+&lt;p&gt;Saat bermigrasi ke GNU/Linux, saya memaksa diri saya untuk hanya menggunakan program &lt;em&gt;free software&lt;/em&gt;. Jika tidak dipaksa, apakah saya bisa bermigrasi secara penuh? Saya mulai menggunakan &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/new/&quot;&gt;Mozzila Firefox&lt;/a&gt; untuk berselancar di Internet, mengolah dokumen dengan &lt;a href=&quot;https://www.libreoffice.org&quot;&gt;LibreOffice&lt;/a&gt;, memilih &lt;a href=&quot;http://gimp.org/&quot;&gt;GIMP&lt;/a&gt; sebagai editor foto, memakai &lt;a href=&quot;https://kdenlive.org/&quot;&gt;Kdenlive&lt;/a&gt; untuk mengedit video, dan lain - lain.&lt;/p&gt;
+
+&lt;p&gt;Apakah ada masalah? Pasti ada. Tapi yang namanya masalah selalu ada penyelesaiannya. Alhamdulillah masalah - masalah saya dapat diselesaikan dengan baik. Akhirnya saya sering membaca agar terhindar dari masalah.&lt;/p&gt;</content><author><name></name></author><category term="catatan" /><summary type="html">Kata Pengantar Memberi gambaran dan panduan untuk migrasi ke GNU/Linux</summary></entry></feed>
