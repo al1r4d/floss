@@ -3,7 +3,7 @@ html {
   font-family: "Liberation Sans", sans-serif;
   font-size: 16px;
   color: #fff;
-  background: #222;
+  background: #111;
 }
 
 @media screen and (max-width: 640px) {
@@ -57,10 +57,16 @@ a:hover {
 }
 
 h1 {
+  color: #7E9F5B;
   font-size: 2em;
 }
 
+h2 {
+  color: #ffa600;
+}
+
 h3 {
+  color: #982395;
   text-align: right;
 }
 
@@ -68,7 +74,7 @@ h3 {
 /* Header
 /*------------------------------*/
 header {
-  background: #222;
+  background: #111;
   /* h2::before {
         content: "[";
         color: $green;
@@ -411,7 +417,7 @@ article hr {
 /* Footer
 /*------------------------------*/
 footer {
-  background: #222;
+  background: #111;
   padding: 0.5em 0 1em 0;
   margin-top: 2em;
 }
