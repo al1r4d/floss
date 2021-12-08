@@ -2,6 +2,7 @@
 title: Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)
 lang: id_ID
 layout: post
+description : Ada beberapa operasi sistem yang bisa anda gunakan, antara lain GNU/Linux, BSD, Android, Haiku, dan masih banyak lagi.
 tag: catatan
 ---
 ## Kata Pengantar
