@@ -65,6 +65,9 @@ h3 {
 	color: $magenta;
 	text-align: right;
 }
+h4 {
+	text-align: center;
+}
 /*------------------------------*/
 /* Header
 /*------------------------------*/
@@ -154,9 +157,9 @@ nav {
 
 nav.right {
     @include mobile {
-        float: left;
+     
         width: 100%;
-        margin: 0;
+        margin: 0 0.5 em;
         padding: 0;
 
     }
@@ -189,7 +192,8 @@ nav.right {
 
 article {
     p code {
-        padding: 3px 7px;
+        color: #fff;
+	    padding: 3px 7px;
         line-height: 1.8em;
     }
 
@@ -197,7 +201,7 @@ article {
     p code,
     .highlight pre,
     td code {
-        background: $codeBg;
+        color: #fff;
         padding: 3px 7px;
         border: 1px solid rgba(0,0,0,0.15);
     }
@@ -206,7 +210,7 @@ article {
         border-left: 5px solid $grey;
         padding: 0.1em 1em;
         /* font-style: italic; */
-        color: rgba(0,0,0,0.85);
+        color: #fff;
     }
 
     code {
@@ -214,7 +218,7 @@ article {
         page-break-inside:avoid;
         page-break-after:auto;
         overflow: auto;
-        color: $black;
+        color: #fff;
     }
 
     ul {
@@ -549,5 +553,7 @@ div.search {
 /*------------------------------*/
 /* Import `default` last
 /*------------------------------*/
-
+.alert-warning {
+  color: rgb(138,109,59) !important;
+}
 @import "default";

@@ -1,8 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="#/feed.xml" rel="self" type="application/atom+xml" /><link href="#/" rel="alternate" type="text/html" /><updated>2021-12-18T06:23:40+07:00</updated><id>#/feed.xml</id><title type="html">Flossku</title><subtitle>Semua floss dan tekno ada disini.</subtitle><entry xml:lang="id_ID"><title type="html">4 Aplikasi Browser PC Terbaik dan Aman</title><link href="#/browser-laptop-terbaik-dan-aman" rel="alternate" type="text/html" title="4 Aplikasi Browser PC Terbaik dan Aman" /><published>2021-12-18T00:00:00+07:00</published><updated>2021-12-18T00:00:00+07:00</updated><id>#/browser-laptop-terbaik-dan-aman</id><content type="html" xml:base="#/browser-laptop-terbaik-dan-aman">&lt;h2 id=&quot;browser-pc-terbaik&quot;&gt;Browser PC Terbaik&lt;/h2&gt;
-&lt;h3 id=&quot;gnu-icecat&quot;&gt;GNU Icecat&lt;/h3&gt;
-&lt;h3 id=&quot;tor-browser&quot;&gt;Tor Browser&lt;/h3&gt;
-&lt;h3 id=&quot;ungoogled-chromium&quot;&gt;Ungoogled Chromium&lt;/h3&gt;
-&lt;h3 id=&quot;qutebrowser&quot;&gt;Qutebrowser&lt;/h3&gt;</content><author><name></name></author><category term="aplikasi" /><summary type="html">Browser PC Terbaik GNU Icecat Tor Browser Ungoogled Chromium Qutebrowser</summary></entry><entry xml:lang="id_ID"><title type="html">Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)</title><link href="#/pindah-ke-linux" rel="alternate" type="text/html" title="Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)" /><published>2021-12-06T00:00:00+07:00</published><updated>2021-12-06T00:00:00+07:00</updated><id>#/pindah-ke-linux</id><content type="html" xml:base="#/pindah-ke-linux">&lt;h2 id=&quot;kata-pengantar&quot;&gt;Kata Pengantar&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="#/feed.xml" rel="self" type="application/atom+xml" /><link href="#/" rel="alternate" type="text/html" /><updated>2022-01-02T17:54:11+07:00</updated><id>#/feed.xml</id><title type="html">Flossku</title><subtitle>Semua floss dan tekno ada disini.</subtitle><entry><title type="html">Cara Install Gentoo Dengan Cepat (BIOS/MBR)</title><link href="#/cara-install-gentoo-dengan-cepat" rel="alternate" type="text/html" title="Cara Install Gentoo Dengan Cepat (BIOS/MBR)" /><published>2022-01-02T00:00:00+07:00</published><updated>2022-01-02T00:00:00+07:00</updated><id>#/cara-install-gentoo-dengan-cepat</id><content type="html" xml:base="#/cara-install-gentoo-dengan-cepat">&lt;p&gt;Saya menggunakan &lt;a href=&quot;https://gentoo.org&quot;&gt;Gentoo GNU/Linux&lt;/a&gt; yang menggantikan &lt;a href=&quot;https://devuan.org&quot;&gt;Devuan GNU/Linux&lt;/a&gt;. Kenapa ganti distro? Karena kata orang, distro ini cocok untuk optimalisasi yang ingin saya lakukan agar mendapatkan performa lebih baik.&lt;/p&gt;
+
+&lt;p&gt;Sayang sekali, Gentoo GNU/Linux tidak menyediakan instalasi secara GUI. Hampir mirip dengan &lt;a href=&quot;https://archlinux.org&quot;&gt;Arch GNU/Linux&lt;/a&gt;, namun lebih rumit Gentoo GNU/Linux. Anda diharuskan &lt;em&gt;compile&lt;/em&gt; sebagian paket selama penginstallan.&lt;/p&gt;
+
+&lt;p&gt;Kali ini saya akan membuat catatan instalasi Gentoo GNU/Linux dengan ringkas dan mudah. Tentunya keringkasan ini mempunyai beberapa kekurangan yang mungkin anda rasakan karena &lt;strong&gt;terlalu ringkas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;apa-itu-gentoo-linux&quot;&gt;Apa itu Gentoo Linux&lt;/h2&gt;
+&lt;p&gt;Gentoo adalah sistem operasi gratis berbasis Linux yang dapat dioptimalkan dan disesuaikan keinginan anda untuk semua kebutuhan.&lt;/p&gt;
+
+&lt;p&gt;Konfigurasi yang ekstrim, kinerja, dan komunitas pengguna dan pengembang terbaik adalah keunggulan dari pengalaman Gentoo.&lt;/p&gt;
+
+&lt;p&gt;Singkatnya, Gentoo Linux adalah distro berbasis kode sumber yang mengharuskan anda membangun paket dari sumbernya, kecuali anda lebih memilih paket yang sudah ada binary.&lt;/p&gt;
+
+&lt;h2 id=&quot;cara-install-gentoo&quot;&gt;Cara Install Gentoo&lt;/h2&gt;
+&lt;p&gt;Kali ini saya akan membuat catatan instalasi Gentoo GNU/Linux dengan ringkas dan mudah. Tentunya keringkasan ini mempunyai beberapa kekurangan yang mungkin anda rasakan karena &lt;strong&gt;terlalu ringkas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;membuat-bootable-iso&quot;&gt;Membuat Bootable ISO&lt;/h3&gt;
+&lt;p&gt;Unduh &lt;em&gt;Minimal Installation CD&lt;/em&gt; di &lt;a href=&quot;https://www.gentoo.org/downloads/&quot;&gt;website Gentoo&lt;/a&gt;. Lalu &lt;em&gt;burn&lt;/em&gt; ISO ke flashdisk/memory card dengan aplikasi favorit, misalnya &lt;a href=&quot;https://www.balena.io/etcher/&quot;&gt;Balena Etcher&lt;/a&gt; dan &lt;a href=&quot;https://rufus.ie/en/&quot;&gt;Rufus&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;booting-iso&quot;&gt;Booting ISO&lt;/h3&gt;
+&lt;p&gt;Lakukan booting dari Flashdisk. Setiap laptop punya cara berbeda, misalnya Laptop Thinkpad bisa booting dari Flashdisk menggunakan menu Boot Order dengan tombol &lt;strong&gt;F12/F10&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;menyambungkan-wifi-dengan-wpa_cli&quot;&gt;Menyambungkan WIFI dengan wpa_cli&lt;/h3&gt;
+&lt;p&gt;Bootable ISO Gentoo menggunakan &lt;a href=&quot;https://wiki.archlinux.org/title/wpa_supplicant&quot;&gt;wpa_supplicant&lt;/a&gt; untuk menyambungkan WIFI.&lt;/p&gt;
+
+&lt;p&gt;Pertama kita buat file wpa_supplicant.conf dengan editor.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ctrl_interface=/run/wpa_supplicant
+update_config=1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Selanjutnya kita jalankan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wpa_cli&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo wpa_cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kita pindai jaringan wifi yang tersedia dengan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scan&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; scan
+OK
+&amp;lt;3&amp;gt;CTRL-EVENT-SCAN-STARTED
+&amp;lt;3&amp;gt;CTRL-EVENT-SCAN-RESULTS
+&amp;lt;3&amp;gt;WPS-AP-AVAILABLE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Setelah melakukan pemindaian, hasil bisa dilihat dengan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scan_results&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; scan_results
+bssid / frequency / signal level / flags / ssid
+00:11:22:33:44:55       2450    -30     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]	linux
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Saya ingin menyambungkan WiFI bernama linux, maka kita tambahkan ke daftar jaringan dengan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add_network&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; add_network
+0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Kemudian kita isi kredensial jaringan linux dengan perintah berikut.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; set_network 0 ssid &quot;linux&quot;
+OK
+&amp;gt; set_network 0 psk &quot;linuxuntuksemua&quot;
+OK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jika tidak memiliki password, gunakan perintah&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; set_network 0 ssid &quot;linux&quot;
+OK
+&amp;gt; set_network 0 key_mgmt NONE
+OK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kalau sudah mengisi kredensial, saatnya menghubungkan dengan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enable_network X&lt;/code&gt;. X adalah angka yang didapatkan. Karena tadi saya mendapatkan 0, maka saya mengganti X dengan 0.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; enable_network 0
+OK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jika berhasil menyambungkan, akan muncul seperti ini.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;3&amp;gt;CTRL-EVENT-CONNECTED - Connection to 00:11:22:33:44:55 completed [id=0 id_str=]
+&amp;lt;3&amp;gt;CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;memformat-drive&quot;&gt;Memformat Drive&lt;/h3&gt;
+&lt;p&gt;Kali ini kita akan mengatur partisi di drive. Saya akan membuat partisi / (atau yang biasa disebut ROOT) saja.&lt;/p&gt;
+
+&lt;p&gt;Jalankan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cfdisk /dev/sdX&lt;/code&gt; untuk mengatur. Sesuaikan X dengan milik anda, misal saya ingin menginstall di sda, maka yang saya jalankan adalah&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # cfdisk /dev/sda
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jika anda belum tahu caranya, bisa baca &lt;a href=&quot;http://sohibuna.blogspot.com/2013/02/membuat-partisi-menggunakan-cfdisk-di.html&quot;&gt;artikel ini&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Saya ingin menggunakan filesistem &lt;a href=&quot;https://wiki.archlinux.org/title/ext4&quot;&gt;ext4&lt;/a&gt;, maka yang saya lakukan adalah&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # mkfs.ext4 -L ROOT /dev/sda1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Sesuaikan dengan partisi kalian.&lt;/p&gt;
+
+&lt;h3 id=&quot;mount-partisi&quot;&gt;Mount Partisi&lt;/h3&gt;
+&lt;p&gt;Sekarang kita akan &lt;em&gt;mount&lt;/em&gt; partisi dengan cara berikut.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # mkdir -p /mnt/gentoo
+root # mount /dev/sda1 /mnt/gentoo
+root # mkdir /mnt/gentoo/boot
+root # mount /dev/sda1 /mnt/gentoo/boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;mengunduh-stage3&quot;&gt;Mengunduh Stage3&lt;/h3&gt;
+&lt;p&gt;Pertama kita ganti direktori ke /mnt/gentoo&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # cd /mnt/gentoo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Unduh &lt;a href=&quot;https://wiki.gentoo.org/wiki/Stage_tarball&quot;&gt;stage3 tarball&lt;/a&gt; sesuai keinginan masing - masing, misalnya ingin &lt;a href=&quot;https://en.wikipedia.org/wiki/OpenRC&quot;&gt;OpenRC&lt;/a&gt; atau &lt;a href=&quot;https://en.wikipedia.org/wiki/Systemd&quot;&gt;systemd&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Bagusnya pilih yang mana?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Saya lebih memilih OpenRC, karena tidak terlalu &lt;em&gt;sreg&lt;/em&gt; dengan systemd.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Untuk mengunduh stage3, bisa menggunakan perintah&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # links https://www.gentoo.org/downloads/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;atau&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20211226T170559Z/stage3-amd64-openrc-20211226T170559Z.tar.xz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Sekali lagi, sesuaikan keinginan kalian.&lt;/p&gt;
+
+&lt;p&gt;Setelah selesai mengunduh, ekstrak file.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # tar -xf stage3*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;chroot&quot;&gt;Chroot&lt;/h3&gt;
+&lt;p&gt;Kita akan chroot stage 3&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # mount -t proc none /mnt/gentoo/proc
+root # mount --rbind /sys /mnt/gentoo/sys
+root #mount --rbind /dev /mnt/gentoo/dev
+root # cp /etc/resolv.conf etc &amp;amp;&amp;amp; chroot . /bin/bash
+root # source /etc/profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Perbarui repositori Gentoo GNU/Linux&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge-webrsync
+root # emerge --sync
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;menentukan-profil&quot;&gt;Menentukan Profil&lt;/h3&gt;
+&lt;p&gt;Kita akan menentukan profil yang sangat penting karena profil mendefinisikan fungsi-nya.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # eselect profile list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Sesuaikan keinginan anda. Kalau versi saya memilih list profil 1.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # eselect profile set 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;mengatur-waktu&quot;&gt;Mengatur Waktu&lt;/h3&gt;
+&lt;p&gt;Tentukan waktu sesuai bagian anda.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # ln -sf /us/share/zoneinfo/Asia/Jakarta /etc/localtime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pemasangan-kernel&quot;&gt;Pemasangan Kernel&lt;/h3&gt;
+&lt;p&gt;Kita akan memasang kernel.&lt;/p&gt;
+
+&lt;h4 id=&quot;kernel-dari-kode-sumber&quot;&gt;Kernel dari kode sumber&lt;/h4&gt;
+&lt;p&gt;Bagian ini sedikit melelahkan karena prosesnya lama, tergantung konfigurasi anda.&lt;/p&gt;
+
+&lt;p&gt;Unduh kode sumber dari kernel.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge gentoo-sources
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ganti ke direktori kode sumber kernel dan melakukan konfigurasi. Sesuaikan konfigurasi sesuai keinginan anda.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # cd /usr/src/linux
+root # make menuconfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Terakhir lakukan membangun kernel.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # make &amp;amp;&amp;amp; make modules_install &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;kernel-binary&quot;&gt;Kernel Binary&lt;/h4&gt;
+&lt;p&gt;Alhamdulillah ada solusi jika anda tidak ingin membangun kernel dari awal. Caranya dengan menggunakan &lt;a href=&quot;https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin&quot;&gt;gentoo-kernel-bin&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge gentoo-kernel-bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-linux-firmware&quot;&gt;Memasang Linux Firmware&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.gentoo.org/wiki/Linux_firmware&quot;&gt;Linux firmware&lt;/a&gt; sangat penting karena berisi firmware dan modul, misalnya modul untuk WiFi, Bluetooth, dan lain - lain. Jadi kalau tidak diunduh, bisa saja WiFi anda tidak berjalan.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge linux-firmware
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-grub2&quot;&gt;Memasang GRUB2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.gentoo.org/wiki/GRUB2&quot;&gt;GRUB2&lt;/a&gt; adalah bootloader yang biasa digunakan di Linux.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge sys-boot/grub:2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jika sudah jangan lupa pasang GRUB2 di partisi kalian, misalnya partisi Gentoo saya ada di /dev/sda.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # grub-install /dev/sda
+root # grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-network-manager&quot;&gt;Memasang Network Manager&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.gentoo.org/wiki/NetworkManager&quot;&gt;Network Manager&lt;/a&gt; adalah salah satu program yang biasa saya gunakan untuk menyambungkan WiFi dan Ethernet.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge networkmanager
+root # rc-update add networkmanager default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-dhcp&quot;&gt;Memasang DHCP&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.gentoo.org/wiki/Dhcpcd&quot;&gt;Dynamic Host Configuration Protocol Client Daemon&lt;/a&gt; adalah klien DHCP populer yang untuk mengelola konfigurasi IPv4 dan IPv6.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # emerge dhcpcd
+root # rc-update add dhcpcd default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;mengubah-password-akun-root&quot;&gt;Mengubah Password Akun Root&lt;/h3&gt;
+&lt;p&gt;Kita akan mengubah password akun root, sesuaikan dengan keinginan anda.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # passwd root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;membuat-akun-baru&quot;&gt;Membuat Akun Baru&lt;/h3&gt;
+&lt;p&gt;Kita buat akun baru, nama bisa anda ganti sesuai kebutuhan anda.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # useradd -m -G wheel,audio,video,usb,cdrom -s /bin/bash linus
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jangan lupa buat passwordnya juga.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # passwd linus
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;umount&quot;&gt;Umount&lt;/h3&gt;
+&lt;p&gt;Karena proses sudah selesai, jangan lupa umount dan reboot.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root # exit
+root # umount /mnt/gentoo 
+root # reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;akhir-kata&quot;&gt;Akhir Kata&lt;/h2&gt;
+&lt;p&gt;Demikian catatan instalasi Gentoo GNU/Linux saya, semoga bisa membantu anda dalam menginstall Gentoo GNU/Linux di mesin anda. Jika ada kesalahan, bisa hubungi saya.&lt;/p&gt;</content><author><name></name></author><category term="catatan" /><summary type="html">Saya menggunakan Gentoo GNU/Linux yang menggantikan Devuan GNU/Linux. Kenapa ganti distro? Karena kata orang, distro ini cocok untuk optimalisasi yang ingin saya lakukan agar mendapatkan performa lebih baik.</summary></entry><entry xml:lang="id_ID"><title type="html">Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)</title><link href="#/pindah-ke-linux" rel="alternate" type="text/html" title="Panduan Pindah Ke GNU/Linux (+Sedikit Cerita)" /><published>2021-12-06T00:00:00+07:00</published><updated>2021-12-06T00:00:00+07:00</updated><id>#/pindah-ke-linux</id><content type="html" xml:base="#/pindah-ke-linux">&lt;h2 id=&quot;kata-pengantar&quot;&gt;Kata Pengantar&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Memberi gambaran dan panduan untuk migrasi ke GNU/Linux&lt;/p&gt;
 &lt;/blockquote&gt;

@@ -70,6 +70,10 @@ h3 {
   text-align: right;
 }
 
+h4 {
+  text-align: center;
+}
+
 /*------------------------------*/
 /* Header
 /*------------------------------*/
@@ -161,9 +165,8 @@ nav li .current {
 
 @media screen and (max-width: 640px) {
   nav.right {
-    float: left;
     width: 100%;
-    margin: 0;
+    margin: 0 0.5 em;
     padding: 0;
   }
 }
@@ -191,6 +194,7 @@ nav li .current {
 }
 
 article p code {
+  color: #fff;
   padding: 3px 7px;
   line-height: 1.8em;
 }
@@ -199,7 +203,7 @@ article ol code,
 article p code,
 article .highlight pre,
 article td code {
-  background: #f2f2f2;
+  color: #fff;
   padding: 3px 7px;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -208,7 +212,7 @@ article blockquote {
   border-left: 5px solid #c2bebe;
   padding: 0.1em 1em;
   /* font-style: italic; */
-  color: rgba(0, 0, 0, 0.85);
+  color: #fff;
 }
 
 article code {
@@ -216,7 +220,7 @@ article code {
   page-break-inside: avoid;
   page-break-after: auto;
   overflow: auto;
-  color: #222;
+  color: #fff;
 }
 
 article ul code {
@@ -337,7 +341,7 @@ article .avatar {
 
 @media screen and (max-width: 640px) {
   article ul,
-  article ol {
+article ol {
     padding-left: 2em;
   }
 }
@@ -350,19 +354,19 @@ article hr {
 
 @media screen and (max-width: 640px) {
   section .date.right,
-  .archive .date.right {
+.archive .date.right {
     float: none;
     display: inline-block;
   }
   section .date.right::before,
-  .archive .date.right::before {
+.archive .date.right::before {
     content: " — ";
   }
 }
 
 @media screen and (max-width: 640px) {
   article p,
-  .home p {
+.home p {
     margin-top: 0.25em;
   }
 }
@@ -560,6 +564,10 @@ div.search {
 /*------------------------------*/
 /* Import `default` last
 /*------------------------------*/
+.alert-warning {
+  color: #8a6d3b !important;
+}
+
 .highlight .hll {
   background-color: #ffffcc;
 }

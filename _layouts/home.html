@@ -21,7 +21,14 @@ layout: default
 	<h2> Semua Floss dan Teknologi Ada Disini!</h2>
 	<p> Ngobrolin topik teknologi dan free software dengan Bahasa Indonesia secara asik.</p>
 	<p> Semua akan free software pada waktunya, iya kan? </p>
-	
+	<div>
+	<div id="search-container">
+	<h2> Cari Disini </h2>
+	<input type="text" id="search-input" placeholder="Ketik apa yang ingin dicari">
+<ul id="results-container"></ul>
+</div>
+</div>
+
 	<h2> Postingan Terbaru</h2>
 		<ul>
 			{% for post in paginator.posts limit:5 %}
@@ -34,13 +41,7 @@ layout: default
 {% include pagination.html %}
 </div>
 
-<div>
-	<div id="search-container">
-	<h2> Cari Disini </h2>
-	<input type="text" id="search-input" placeholder="Ketik apa yang ingin dicari">
-<ul id="results-container"></ul>
-</div>
-</div>
+
 <script>
 // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt MIT
 // @license-end

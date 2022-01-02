@@ -1,0 +1,224 @@
+I"¼7<p>Saya menggunakan <a href="https://gentoo.org">Gentoo GNU/Linux</a> yang menggantikan <a href="https://devuan.org">Devuan GNU/Linux</a>. Kenapa ganti distro? Karena kata orang, distro ini cocok untuk optimalisasi yang ingin saya lakukan agar mendapatkan performa lebih baik.</p>
+
+<p>Sayang sekali, Gentoo GNU/Linux tidak menyediakan instalasi secara GUI. Hampir mirip dengan <a href="https://archlinux.org">Arch GNU/Linux</a>, namun lebih rumit Gentoo GNU/Linux. Anda diharuskan <em>compile</em> sebagian paket selama penginstallan.</p>
+
+<p>Kali ini saya akan membuat catatan instalasi Gentoo GNU/Linux dengan ringkas dan mudah. Tentunya keringkasan ini mempunyai beberapa kekurangan yang mungkin anda rasakan karena <strong>terlalu ringkas</strong>.</p>
+
+<h2 id="apa-itu-gentoo-linux">Apa itu Gentoo Linux</h2>
+<p>Gentoo adalah sistem operasi gratis berbasis Linux yang dapat dioptimalkan dan disesuaikan keinginan anda untuk semua kebutuhan.</p>
+
+<p>Konfigurasi yang ekstrim, kinerja, dan komunitas pengguna dan pengembang terbaik adalah keunggulan dari pengalaman Gentoo.</p>
+
+<p>Singkatnya, Gentoo Linux adalah distro berbasis kode sumber yang mengharuskan anda membangun paket dari sumbernya, kecuali anda lebih memilih paket yang sudah ada binary.</p>
+
+<h2 id="cara-install-gentoo">Cara Install Gentoo</h2>
+<p>Kali ini saya akan membuat catatan instalasi Gentoo GNU/Linux dengan ringkas dan mudah. Tentunya keringkasan ini mempunyai beberapa kekurangan yang mungkin anda rasakan karena <strong>terlalu ringkas</strong>.</p>
+
+<h3 id="membuat-bootable-iso">Membuat Bootable ISO</h3>
+<p>Unduh <em>Minimal Installation CD</em> di <a href="https://www.gentoo.org/downloads/">website Gentoo</a>. Lalu <em>burn</em> ISO ke flashdisk/memory card dengan aplikasi favorit, misalnya <a href="https://www.balena.io/etcher/">Balena Etcher</a> dan <a href="https://rufus.ie/en/">Rufus</a>.</p>
+
+<h3 id="booting-iso">Booting ISO</h3>
+<p>Lakukan booting dari Flashdisk. Setiap laptop punya cara berbeda, misalnya Laptop Thinkpad bisa booting dari Flashdisk menggunakan menu Boot Order dengan tombol <strong>F12/F10</strong></p>
+
+<h3 id="menyambungkan-wifi-dengan-wpa_cli">Menyambungkan WIFI dengan wpa_cli</h3>
+<p>Bootable ISO Gentoo menggunakan <a href="https://wiki.archlinux.org/title/wpa_supplicant">wpa_supplicant</a> untuk menyambungkan WIFI.</p>
+
+<p>Pertama kita buat file wpa_supplicant.conf dengan editor.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=/run/wpa_supplicant
+update_config=1
+</code></pre></div></div>
+
+<p>Selanjutnya kita jalankan perintah <code class="language-plaintext highlighter-rouge">wpa_cli</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo wpa_cli
+</code></pre></div></div>
+
+<p>Kita pindai jaringan wifi yang tersedia dengan perintah <code class="language-plaintext highlighter-rouge">scan</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; scan
+OK
+&lt;3&gt;CTRL-EVENT-SCAN-STARTED
+&lt;3&gt;CTRL-EVENT-SCAN-RESULTS
+&lt;3&gt;WPS-AP-AVAILABLE
+</code></pre></div></div>
+
+<p>Setelah melakukan pemindaian, hasil bisa dilihat dengan perintah <code class="language-plaintext highlighter-rouge">scan_results</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; scan_results
+bssid / frequency / signal level / flags / ssid
+00:11:22:33:44:55       2450    -30     [WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]	linux
+</code></pre></div></div>
+
+<p>Saya ingin menyambungkan WiFI bernama linux, maka kita tambahkan ke daftar jaringan dengan perintah <code class="language-plaintext highlighter-rouge">add_network</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; add_network
+0
+</code></pre></div></div>
+<p>Kemudian kita isi kredensial jaringan linux dengan perintah berikut.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; set_network 0 ssid "linux"
+OK
+&gt; set_network 0 psk "linuxuntuksemua"
+OK
+</code></pre></div></div>
+<p>Jika tidak memiliki password, gunakan perintah</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; set_network 0 ssid "linux"
+OK
+&gt; set_network 0 key_mgmt NONE
+OK
+</code></pre></div></div>
+
+<p>Kalau sudah mengisi kredensial, saatnya menghubungkan dengan perintah <code class="language-plaintext highlighter-rouge">enable_network X</code>. X adalah angka yang didapatkan. Karena tadi saya mendapatkan 0, maka saya mengganti X dengan 0.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; enable_network 0
+OK
+</code></pre></div></div>
+<p>Jika berhasil menyambungkan, akan muncul seperti ini.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;3&gt;CTRL-EVENT-CONNECTED - Connection to 00:11:22:33:44:55 completed [id=0 id_str=]
+&lt;3&gt;CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+</code></pre></div></div>
+<h3 id="memformat-drive">Memformat Drive</h3>
+<p>Kali ini kita akan mengatur partisi di drive. Saya akan membuat partisi / (atau yang biasa disebut ROOT) saja.</p>
+
+<p>Jalankan perintah <code class="language-plaintext highlighter-rouge">cfdisk /dev/sdX</code> untuk mengatur. Sesuaikan X dengan milik anda, misal saya ingin menginstall di sda, maka yang saya jalankan adalah</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # cfdisk /dev/sda
+</code></pre></div></div>
+<p>Jika anda belum tahu caranya, bisa baca <a href="http://sohibuna.blogspot.com/2013/02/membuat-partisi-menggunakan-cfdisk-di.html">artikel ini</a>.</p>
+
+<p>Saya ingin menggunakan filesistem <a href="https://wiki.archlinux.org/title/ext4">ext4</a>, maka yang saya lakukan adalah</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # mkfs.ext4 -L ROOT /dev/sda1
+</code></pre></div></div>
+<p>Sesuaikan dengan partisi kalian.</p>
+
+<h3 id="mount-partisi">Mount Partisi</h3>
+<p>Sekarang kita akan <em>mount</em> partisi dengan cara berikut.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # mkdir -p /mnt/gentoo
+root # mount /dev/sda1 /mnt/gentoo
+root # mkdir /mnt/gentoo/boot
+root # mount /dev/sda1 /mnt/gentoo/boot
+</code></pre></div></div>
+
+<h3 id="mengunduh-stage3">Mengunduh Stage3</h3>
+<p>Pertama kita ganti direktori ke /mnt/gentoo</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # cd /mnt/gentoo
+</code></pre></div></div>
+
+<p>Unduh <a href="https://wiki.gentoo.org/wiki/Stage_tarball">stage3 tarball</a> sesuai keinginan masing - masing, misalnya ingin <a href="https://en.wikipedia.org/wiki/OpenRC">OpenRC</a> atau <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a>.</p>
+<hr />
+
+<blockquote>
+  <p><em>Bagusnya pilih yang mana?</em></p>
+</blockquote>
+
+<p>Saya lebih memilih OpenRC, karena tidak terlalu <em>sreg</em> dengan systemd.</p>
+<hr />
+
+<p>Untuk mengunduh stage3, bisa menggunakan perintah</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # links https://www.gentoo.org/downloads/
+</code></pre></div></div>
+<p>atau</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20211226T170559Z/stage3-amd64-openrc-20211226T170559Z.tar.xz
+</code></pre></div></div>
+<p>Sekali lagi, sesuaikan keinginan kalian.</p>
+
+<p>Setelah selesai mengunduh, ekstrak file.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # tar -xf stage3*
+</code></pre></div></div>
+
+<h3 id="chroot">Chroot</h3>
+<p>Kita akan chroot stage 3</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # mount -t proc none /mnt/gentoo/proc
+root # mount --rbind /sys /mnt/gentoo/sys
+root #mount --rbind /dev /mnt/gentoo/dev
+root # cp /etc/resolv.conf etc &amp;&amp; chroot . /bin/bash
+root # source /etc/profile
+</code></pre></div></div>
+
+<p>Perbarui repositori Gentoo GNU/Linux</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge-webrsync
+root # emerge --sync
+</code></pre></div></div>
+
+<h3 id="menentukan-profil">Menentukan Profil</h3>
+<p>Kita akan menentukan profil yang sangat penting karena profil mendefinisikan fungsi-nya.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # eselect profile list
+</code></pre></div></div>
+<p>Sesuaikan keinginan anda. Kalau versi saya memilih list profil 1.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # eselect profile set 1
+</code></pre></div></div>
+
+<h3 id="mengatur-waktu">Mengatur Waktu</h3>
+<p>Tentukan waktu sesuai bagian anda.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # ln -sf /us/share/zoneinfo/Asia/Jakarta /etc/localtime
+</code></pre></div></div>
+
+<h3 id="pemasangan-kernel">Pemasangan Kernel</h3>
+<p>Kita akan memasang kernel.</p>
+
+<h4 id="kernel-dari-kode-sumber">Kernel dari kode sumber</h4>
+<p>Bagian ini sedikit melelahkan karena prosesnya lama, tergantung konfigurasi anda.</p>
+
+<p>Unduh kode sumber dari kernel.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge gentoo-sources
+</code></pre></div></div>
+
+<p>Ganti ke direktori kode sumber kernel dan melakukan konfigurasi. Sesuaikan konfigurasi sesuai keinginan anda.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # cd /usr/src/linux
+root # make menuconfig
+</code></pre></div></div>
+
+<p>Terakhir lakukan membangun kernel.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # make &amp;&amp; make modules_install &amp;&amp; make install
+</code></pre></div></div>
+
+<h4 id="kernel-binary">Kernel Binary</h4>
+<p>Alhamdulillah ada solusi jika anda tidak ingin membangun kernel dari awal. Caranya dengan menggunakan <a href="https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin">gentoo-kernel-bin</a>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge gentoo-kernel-bin
+</code></pre></div></div>
+
+<h3 id="memasang-linux-firmware">Memasang Linux Firmware</h3>
+<p><a href="https://wiki.gentoo.org/wiki/Linux_firmware">Linux firmware</a> sangat penting karena berisi firmware dan modul, misalnya modul untuk WiFi, Bluetooth, dan lain - lain. Jadi kalau tidak diunduh, bisa saja WiFi anda tidak berjalan.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge linux-firmware
+</code></pre></div></div>
+
+<h3 id="memasang-grub2">Memasang GRUB2</h3>
+<p><a href="https://wiki.gentoo.org/wiki/GRUB2">GRUB2</a> adalah bootloader yang biasa digunakan di Linux.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge sys-boot/grub:2
+</code></pre></div></div>
+<p>Jika sudah jangan lupa pasang GRUB2 di partisi kalian, misalnya partisi Gentoo saya ada di /dev/sda.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # grub-install /dev/sda
+root # grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<h3 id="memasang-network-manager">Memasang Network Manager</h3>
+<p><a href="https://wiki.gentoo.org/wiki/NetworkManager">Network Manager</a> adalah salah satu program yang biasa saya gunakan untuk menyambungkan WiFi dan Ethernet.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge networkmanager
+root # rc-update add networkmanager default
+</code></pre></div></div>
+
+<h3 id="memasang-dhcp">Memasang DHCP</h3>
+<p><a href="https://wiki.gentoo.org/wiki/Dhcpcd">Dynamic Host Configuration Protocol Client Daemon</a> adalah klien DHCP populer yang untuk mengelola konfigurasi IPv4 dan IPv6.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # emerge dhcpcd
+root # rc-update add dhcpcd default
+</code></pre></div></div>
+
+<h3 id="mengubah-password-akun-root">Mengubah Password Akun Root</h3>
+<p>Kita akan mengubah password akun root, sesuaikan dengan keinginan anda.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # passwd root
+</code></pre></div></div>
+<h3 id="membuat-akun-baru">Membuat Akun Baru</h3>
+<p>Kita buat akun baru, nama bisa anda ganti sesuai kebutuhan anda.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # useradd -m -G wheel,audio,video,usb,cdrom -s /bin/bash linus
+</code></pre></div></div>
+<p>Jangan lupa buat passwordnya juga.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # passwd linus
+</code></pre></div></div>
+
+<h3 id="umount">Umount</h3>
+<p>Karena proses sudah selesai, jangan lupa umount dan reboot.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # exit
+root # umount /mnt/gentoo 
+root # reboot
+</code></pre></div></div>
+
+<h2 id="akhir-kata">Akhir Kata</h2>
+<p>Demikian catatan instalasi Gentoo GNU/Linux saya, semoga bisa membantu anda dalam menginstall Gentoo GNU/Linux di mesin anda. Jika ada kesalahan, bisa hubungi saya.</p>
+:ET
