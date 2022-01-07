@@ -24,14 +24,14 @@
 <p>Bootable ISO Gentoo menggunakan <a href="https://wiki.archlinux.org/title/wpa_supplicant">wpa_supplicant</a> untuk menyambungkan WIFI.</p>
 
 <p>Pertama kita buat file wpa_supplicant.conf dengan editor.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # vim /etc/wpa_supplicant/wpa_supplicant.conf
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctrl_interface=/run/wpa_supplicant
 update_config=1
 </code></pre></div></div>
 
 <p>Selanjutnya kita jalankan perintah <code class="language-plaintext highlighter-rouge">wpa_cli</code>.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo wpa_cli
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root # wpa_cli
 </code></pre></div></div>
 
 <p>Kita pindai jaringan wifi yang tersedia dengan perintah <code class="language-plaintext highlighter-rouge">scan</code>.</p>

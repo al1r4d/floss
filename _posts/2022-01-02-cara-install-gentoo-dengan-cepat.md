@@ -31,7 +31,7 @@ Bootable ISO Gentoo menggunakan [wpa_supplicant](https://wiki.archlinux.org/titl
 
 Pertama kita buat file wpa_supplicant.conf dengan editor.
 ```
-$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+root # vim /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 ```
 ctrl_interface=/run/wpa_supplicant
@@ -40,7 +40,7 @@ update_config=1
 
 Selanjutnya kita jalankan perintah `wpa_cli`.
 ```
-$ sudo wpa_cli
+root # wpa_cli
 ```
 
 Kita pindai jaringan wifi yang tersedia dengan perintah `scan`.
