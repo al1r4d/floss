@@ -225,7 +225,6 @@ article {
         code {
         background: $codeBg;
         padding: 3px 7px;
-        border: 1px solid rgba(0,0,0,0.15);
         }
     }
 
@@ -233,7 +232,6 @@ article {
         .highlighter-rouge {
                 background: #333;
                 color: $orange;
-                border: 1px solid rgba(255,255,255,0.15);
             }
 
     .highlight pre {
